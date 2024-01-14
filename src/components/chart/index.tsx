@@ -130,7 +130,7 @@ export function TransactionSummary({ transactions }: TransactionsProps) {
   }, [transactions]);
 
   return (
-    <div className="w-96 h-96 flex flex-row">
+    <div className="w-48 h-128 md:w-96 md:h-96 flex md:flex-row flex-col  ml-16 md:ml-0 p-2">
       <Pie data={typeChartData} />
       <Doughnut data={categoryChartData} />
       <Pie data={amountChartData} />

@@ -92,7 +92,6 @@ export default function Transactions() {
     setTransactionCategory("");
     setDate(undefined);
   }
-  console.log(data);
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -102,20 +101,21 @@ export default function Transactions() {
       <div className="font-bold pt-8 text-2xl">
         <h1>Your balance: ${totalBalance?.toString()}</h1>
       </div>
-      <div className="flex items-center py-4">
-        <Select value={transactionType} onValueChange={setTransactionType}>
-          <SelectTrigger className="w-[240px]">
-            <SelectValue placeholder="Transaction type" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              <SelectLabel>Transaction type</SelectLabel>
-              <SelectItem value="cash">Cash</SelectItem>
-              <SelectItem value="electronic">Electronic</SelectItem>
-            </SelectGroup>
-          </SelectContent>
-        </Select>
-
+      <div className="flex items-center py-4 flex-wrap md:flex-nowrap gap-4 md:gap-0 ">
+        <div className="ml-4">
+          <Select value={transactionType} onValueChange={setTransactionType}>
+            <SelectTrigger className="w-[240px]">
+              <SelectValue placeholder="Transaction type" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectLabel>Transaction type</SelectLabel>
+                <SelectItem value="cash">Cash</SelectItem>
+                <SelectItem value="electronic">Electronic</SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
+        </div>
         <div className="ml-4">
           <Select
             value={transactionCategory}
